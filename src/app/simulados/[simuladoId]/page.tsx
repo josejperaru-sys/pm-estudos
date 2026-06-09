@@ -12,7 +12,7 @@ export default function SimuladoPage() {
   const [simulado, setSimulado] = useState<any>(null)
   const [questoes, setQuestoes] = useState<any[]>([])
   const [respostas, setRespostas] = useState<Record<string, string>>({})
-  const [fase, setFase] = useState<'intro'|'prova'|'resultado'>('intro')
+  const [fase, setFase] = useState<string>('intro')
   const [tempoRestante, setTempoRestante] = useState(0)
   const [tempoGasto, setTempoGasto] = useState(0)
   const [loading, setLoading] = useState(true)
@@ -219,7 +219,7 @@ export default function SimuladoPage() {
                   const c = getCorAlternativa(questoes[questaoAtual], alt)
                   return (
                     <button key={alt} onClick={() => {
-                      if (fase === 'resultado') return
+                      if ((fase as string) === 'resultado') return
                       setRespostas(prev => ({ ...prev, [questoes[questaoAtual].id]: alt }))
                     }}
                       style={{ display:'flex', alignItems:'flex-start', gap:12, padding:'12px 16px', borderRadius:10, background:c.bg, border:c.border, cursor:'pointer', textAlign:'left', width:'100%', fontFamily:'system-ui' }}>
