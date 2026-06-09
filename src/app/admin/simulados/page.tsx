@@ -171,7 +171,7 @@ export default function AdminSimuladosPage() {
                     <span style={{ fontSize:11, padding:'3px 10px', borderRadius:20, fontWeight:600, background:sim.is_active?'#f0fdf4':'#f8fafc', color:sim.is_active?'#16a34a':'#94a3b8', border:`1px solid ${sim.is_active?'#bbf7d0':'#e2e8f0'}` }}>
                       {sim.is_active?'✅ Publicado':'⬜ Rascunho'}
                     </span>
-                    <div style={{ display:'flex', gap:6' }}>
+                    <div style={{ display:'flex', gap:6 }}>
                       <button onClick={() => { setSelectedSim(sim); loadQuestoes(sim.id); setTab('questoes') }} style={{ padding:'6px 12px', borderRadius:8, border:'1px solid #e2e8f0', background:'#fff', color:'#334151', fontSize:12, cursor:'pointer' }}>❓ Questões</button>
                       <button onClick={() => toggleActive(sim)} style={{ padding:'6px 12px', borderRadius:8, border:'none', background:sim.is_active?'#fef2f2':'#f0fdf4', color:sim.is_active?'#dc2626':'#16a34a', fontSize:12, cursor:'pointer' }}>{sim.is_active?'Despublicar':'Publicar'}</button>
                       <button onClick={() => { setEditingSim(sim); setSimTitle(sim.title); setSimDesc(sim.description||''); setSimDur(String(sim.duration_min)) }} style={{ padding:'6px 12px', borderRadius:8, border:'1px solid #e2e8f0', background:'#fff', color:'#334151', fontSize:12, cursor:'pointer' }}>✏️</button>
@@ -252,7 +252,7 @@ export default function AdminSimuladosPage() {
                           <span>Gabarito: <strong style={{ color:'#16a34a' }}>{q.gabarito.toUpperCase()}</strong></span>
                         </div>
                       </div>
-                      <div style={{ display:'flex', gap:6', flexShrink:0 }}>
+                      <div style={{ display:'flex', gap:6, flexShrink:0 }}>
                         <button onClick={() => editQ(q)} style={{ padding:'5px 10px', borderRadius:7, border:'1px solid #e2e8f0', background:'#fff', color:'#334151', fontSize:12, cursor:'pointer' }}>✏️</button>
                         <button onClick={() => deleteQ(q.id)} style={{ padding:'5px 10px', borderRadius:7, border:'1px solid #fecaca', background:'#fef2f2', color:'#dc2626', fontSize:12, cursor:'pointer' }}>🗑</button>
                       </div>
