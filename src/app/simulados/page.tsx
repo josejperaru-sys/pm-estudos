@@ -98,7 +98,7 @@ export default function SimuladosPage() {
                     )}
 
                     <button onClick={() => router.push(`/simulados/${sim.id}`)}
-                      style={{ marginTop:14, padding:'10px 24px', borderRadius:10, border:'none', background: res ? '#f8fafc' : 'linear-gradient(135deg,#c9a227,#e8c547)', color: res ? '#334155' : '#0d1b3e', fontSize:14, fontWeight:700, cursor:'pointer', border: res ? '1px solid #e2e8f0' : 'none' }}>
+                      style={{ marginTop:14, padding:'10px 24px', borderRadius:10, background: res ? '#f8fafc' : 'linear-gradient(135deg,#c9a227,#e8c547)', color: res ? '#334155' : '#0d1b3e', fontSize:14, fontWeight:700, cursor:'pointer', border: res ? '1px solid #e2e8f0' : 'none' }}>
                       {res ? '📋 Ver resultado / Refazer' : '▶ Iniciar simulado'}
                     </button>
                   </div>
