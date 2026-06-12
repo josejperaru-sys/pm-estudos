@@ -117,7 +117,7 @@ export default function ModulosPage() {
         .mod-left { width: 240px; background: #fff; border-right: 0.5px solid #e2e8f0; display: flex; flex-direction: column; flex-shrink: 0; overflow: hidden; }
         .mod-left-hdr { padding: 12px 14px; background: #0d1f4a; flex-shrink: 0; border-bottom: 1px solid rgba(201,162,39,0.15); }
         .mod-left-scroll { flex: 1; overflow-y: auto; }
-        .mod-center { flex: 1; display: flex; flex-direction: column; overflow: hidden; background: #f0f4fb; }
+        .mod-center { flex: 1; display: flex; flex-direction: column; overflow-y: auto; background: #f0f4fb; }
         .mod-right { width: 220px; background: #fff; border-left: 0.5px solid #e2e8f0; display: flex; flex-direction: column; flex-shrink: 0; overflow: hidden; }
         .mod-right-hdr { padding: 12px 14px; background: #0d1f4a; flex-shrink: 0; border-bottom: 1px solid rgba(201,162,39,0.15); }
         .mod-right-scroll { flex: 1; overflow-y: auto; padding: 10px; }
@@ -245,7 +245,7 @@ export default function ModulosPage() {
                   </div>
                 </div>
 
-                <div style={{ flex:1, overflowY:'auto', padding:'16px 18px' }}>
+                <div style={{ padding:'16px 18px 80px' }}>
                   {activeLesson.description && (
                     <div style={{ background:'#fff', borderRadius:12, padding:'14px 16px', marginBottom:12, border:'0.5px solid #e2e8f0' }}>
                       <div style={{ fontSize:11, fontWeight:600, color:'#94a3b8', textTransform:'uppercase' as const, letterSpacing:'0.06em', marginBottom:6 }}>Sobre esta aula</div>
