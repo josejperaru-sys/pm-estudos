@@ -214,7 +214,7 @@ export default function Dashboard() {
           <div style={{ flex:1, padding:'14px 8px', overflowY:'auto' }}>
             <div style={{ fontSize:10, color:'rgba(106,143,196,0.5)', letterSpacing:'0.1em', textTransform:'uppercase', padding:'0 8px 5px', marginTop:4 }}>Principal</div>
             {navItems.map(item => (
-              <div key={item.key} onClick={() => setActiveTab(item.key as any)} className={`pm-nav-item${activeTab===item.key?' active':''}`}>
+              <div key={item.key} onClick={() => { if(item.key === 'modulos') { router.push('/modulos') } else { setActiveTab(item.key as any) } }} className={`pm-nav-item${activeTab===item.key?' active':''}`}>
                 <span style={{ fontSize:16 }}>{item.icon}</span>{item.label}
               </div>
             ))}
@@ -486,7 +486,7 @@ export default function Dashboard() {
                             <div style={{ height:6, background:'#f3f4f6', borderRadius:3, overflow:'hidden', marginBottom:12 }}>
                               <div style={{ height:'100%', width:`${pct}%`, background:colors[i%colors.length], borderRadius:3 }}></div>
                             </div>
-                            <button style={{ width:'100%', padding:'9px', borderRadius:9, border:'none', background:pct===100?'#2d9a6b':`linear-gradient(135deg,${colors[i%colors.length]},${colors[(i+1)%colors.length]})`, color:'#fff', fontSize:13, fontWeight:700, cursor:'pointer' }}>
+                            <button onClick={() => router.push('/modulos')} style={{ width:'100%', padding:'9px', borderRadius:9, border:'none', background:pct===100?'#2d9a6b':`linear-gradient(135deg,${colors[i%colors.length]},${colors[(i+1)%colors.length]})`, color:'#fff', fontSize:13, fontWeight:700, cursor:'pointer' }}>
                               {pct===100?'✅ Módulo concluído':'▶ Acessar módulo'}
                             </button>
                           </div>
@@ -698,7 +698,7 @@ export default function Dashboard() {
           {/* BOTTOM NAV MOBILE */}
           <div className="pm-bottom-nav">
             {navItems.map(item => (
-              <button key={item.key} onClick={() => setActiveTab(item.key as any)}
+              <button key={item.key} onClick={() => { if(item.key === 'modulos') { router.push('/modulos') } else { setActiveTab(item.key as any) } }}
                 style={{ flex:1, padding:'10px 4px', border:'none', background:'transparent', cursor:'pointer', display:'flex', flexDirection:'column', alignItems:'center', gap:2, color:activeTab===item.key?'#c9a227':'#6a8fc4', fontSize:10, fontWeight:activeTab===item.key?700:400, borderTop:activeTab===item.key?'2px solid #c9a227':'2px solid transparent', fontFamily:'system-ui' }}>
                 <span style={{ fontSize:18 }}>{item.icon}</span>
                 {item.label}
